@@ -35,7 +35,7 @@ export default {
         // container: "searchBar",
         accessToken: mapboxgl.accessToken,
         zoom: 14,
-        placeholder: "Enter search e.g. Lincoln Park",
+        placeholder: "Find information...",
         mapboxgl: mapboxgl
       })
     );
@@ -102,7 +102,7 @@ export default {
 .mapboxgl-ctrl-top-right .mapboxgl-ctrl {
   // margin: 0 auto
   float: none;
-  display: none;
+  // display: none;
 }
 
 .mapboxgl-ctrl-geocoder {
@@ -111,11 +111,11 @@ export default {
   line-height: 20px;
   // max-width: 360px;
   margin: 5vh auto;
-  position: fixed;
+  position: relative;
   z-index: 2;
-  top: 0;
-  left: 50%;
-  margin-left: -20%;
+  // top: 15px;
+  // left: -200%;
+  // margin-left: -20%;
 }
 
 .mapboxgl-ctrl-geocoder--input {

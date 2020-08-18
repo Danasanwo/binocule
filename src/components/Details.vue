@@ -1,5 +1,5 @@
 <template>
-  <div class="details" v-show="show" :class="{ active: isActive }">
+  <div class="details" v-show="show" :class="{ active: isActive, unShow: unshow }">
     <div class="detailcontainer">
       <div class="cominfo">
         <div class="com-name">
@@ -59,9 +59,9 @@ export default {
   name: "Details",
   data() {
     return {
-      show: true,
-      isActive: true,
-      unshow: false
+      // show: true,
+      // isActive: true,
+      // unshow: false
     };
   },
   methods: {
@@ -85,7 +85,7 @@ export default {
   border-top-left-radius: 10px;
   // font-weight: bold;
 
-  // display: none;
+  display: none;
 }
 .detailcontainer {
   width: inherit;

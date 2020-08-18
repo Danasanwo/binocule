@@ -1,5 +1,5 @@
 <template>
-  <div class="addNew" :class="{ active: !isActive }">
+  <div class="addNew" :class="{ active: !isActive, unShow: !unshow }">
     <div class="detailContainer">
       <div class="new-business">
         <div class="com-name">
