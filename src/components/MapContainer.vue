@@ -50,6 +50,12 @@ export default {
 </script>
 
 <style lang="scss">
+@media only screen and (orientation: portrait) {
+  .basemap {
+    width: 100%;
+    height: 100vh;
+  }
+}
 .basemap {
   width: 100%;
   height: 100vh;

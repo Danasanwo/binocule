@@ -36,4 +36,19 @@ export default {
   display: flex;
   font-family: "Open Sans", sans-serif;
 }
+
+.unShow {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+@media only screen and (orientation: portrait) {
+  .homepage {
+    width: 100vw;
+    display: block;
+  }
+}
 </style>

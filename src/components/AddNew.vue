@@ -1,5 +1,5 @@
 <template>
-  <div class="addNew">
+  <div class="addNew" :class="{ active: !isActive }">
     <div class="detailContainer">
       <div class="new-business">
         <div class="com-name">
@@ -91,7 +91,8 @@ export default {
   name: "AddNew",
   data() {
     return {
-      // key: value
+      isActive: true,
+      unshow: false
     };
   }
 };
@@ -100,7 +101,7 @@ export default {
 <style lang="scss">
 .addNew {
   flex: 3;
-  width: 60vw;
+  // width: 60vw;
   font-size: 10px;
   border-top-left-radius: 10px;
   /* font-weight: bold */
@@ -115,9 +116,9 @@ export default {
   align-items: flex-start;
   margin: 10vh auto 0;
   // background: black;
-  div {
-    // margin: 0;
-  }
+  // div {
+  // margin: 0;
+  // }
 }
 
 .new-business {
@@ -233,6 +234,19 @@ export default {
         font-size: 1.6rem;
       }
     }
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .addNew {
+    width: 100vw;
+  }
+  .detailContainer {
+    display: block;
+    width: inherit;
+  }
+  .who-to {
+    margin: 10vh 0;
   }
 }
 </style>

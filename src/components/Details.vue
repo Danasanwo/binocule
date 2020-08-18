@@ -1,12 +1,15 @@
 <template>
-  <div class="details" v-show="show">
+  <div class="details" v-show="show" :class="{ active: isActive }">
     <div class="detailcontainer">
       <div class="cominfo">
         <div class="com-name">
-          <img src="../../public/images/logo/back.svg" alt srcset />
+          <img @click="goBack" src="../../public/images/logo/back.svg" alt srcset />
           <p style="margin: 0; font-weight:bold">Emeka Foodstuff Store</p>
           <img src="../../public/images/logo/share.svg" alt />
-          <img src="../../public/images/logo/menu.svg" alt />
+          <img @click="open" src="../../public/images/logo/menu.svg" class="menu-btn" alt />
+        </div>
+        <div class="dropdown">
+          <div class="createNew">Create New</div>
         </div>
 
         <p style="color:#A5A5A5">What we sell</p>
@@ -56,8 +59,20 @@ export default {
   name: "Details",
   data() {
     return {
-      show: true
+      show: true,
+      isActive: true,
+      unshow: false
     };
+  },
+  methods: {
+    goBack() {
+      this.show = false;
+
+      // this.$forceUpdate();
+    },
+    open() {
+      this.isActive = false;
+    }
   }
 };
 </script>
@@ -65,7 +80,7 @@ export default {
 <style lang="scss">
 .details {
   flex: 3;
-  width: 60vw;
+  // width: 60vw;
   font-size: 10px;
   border-top-left-radius: 10px;
   // font-weight: bold;
@@ -79,6 +94,30 @@ export default {
   align-items: flex-start;
   margin: 10vh auto 0;
   /* background: black; */
+}
+
+.dropdown {
+  position: relative;
+  display: none;
+  top: -30px;
+  left: 80%;
+  width: 70px;
+  text-align: center;
+  margin-bottom: 10vh;
+
+  .createNew {
+    // display: none;
+    position: absolute;
+    width: inherit;
+    height: 12px;
+    border: 1px solid #a5a5a5;
+    padding: 8px;
+    z-index: 1;
+  }
+}
+
+.menu-btn:hover .dropdown {
+  display: block;
 }
 
 .cominfo {
@@ -165,6 +204,15 @@ export default {
         font-size: 1.6rem;
       }
     }
+  }
+}
+@media only screen and (orientation: portrait) {
+  .details {
+    width: 100vw;
+  }
+  .detailcontainer {
+    width: inherit;
+    display: block;
   }
 }
 </style>
