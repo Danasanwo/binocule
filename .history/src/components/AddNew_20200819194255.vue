@@ -91,8 +91,8 @@ export default {
   name: "AddNew",
   data() {
     return {
-      isActive: true,
-      unshow: false
+      isActive: true
+      // unshow: false
     };
   }
 };

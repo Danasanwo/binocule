@@ -99,25 +99,44 @@ export default {
   }
 }
 
+.mapboxgl-ctrl-top-right {
+  width: 50%;
+  margin: 5vh auto;
+  position: absolute;
+  // z-index: 2;
+  top: 0;
+  left: 50%;
+  margin-left: -15%;
+
+  .mapboxgl-ctrl-geocoder {
+    width: 100%;
+    height: 40px;
+    border-radius: 13px;
+    box-shadow: 0px 1px 8px #00000015;
+    background-image: url("../../public/images/logo/logo.svg");
+
+    background-repeat: no-repeat;
+    background-position: 90%;
+    background-size: 30px 40px;
+    // padding: 0 0 0 15%;
+    transition: border 0.8s;
+    border: 1px #ffffff solid;
+  }
+
+  .mapboxgl-ctrl-geocoder:focus {
+    outline: none;
+    appearance: none;
+  }
+}
+
 .mapboxgl-ctrl-top-right .mapboxgl-ctrl {
   // margin: 0 auto
   float: none;
+
   // display: none;
 }
 
-.mapboxgl-ctrl-geocoder {
-  width: 40%;
-  font-size: 15px;
-  line-height: 20px;
-  // max-width: 360px;
-  margin: 5vh auto;
-  position: relative;
-  z-index: 2;
-  // top: 15px;
-  // left: -200%;
-  // margin-left: -20%;
-}
-
 .mapboxgl-ctrl-geocoder--input {
+  width: inherit;
 }
 </style>

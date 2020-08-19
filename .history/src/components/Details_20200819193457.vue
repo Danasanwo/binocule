@@ -1,5 +1,5 @@
 <template>
-  <div class="details" v-show="show" :class="{ unShow: unshow }">
+  <div class="details" v-show="show" :class="{ active: isActive, unShow: unshow }">
     <div class="detailcontainer">
       <div class="cominfo">
         <div class="com-name">
