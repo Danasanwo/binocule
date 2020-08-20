@@ -75,7 +75,7 @@ export default {
       this.isActive = false;
       this.unshow = true;
       let current = [false, true];
-      this.changePage(current);
+      this.changePage();
     }
   }
 };
@@ -89,7 +89,7 @@ export default {
   border-top-left-radius: 10px;
   // font-weight: bold;
 
-  // display: none;s
+  display: block;
 }
 .detailcontainer {
   width: inherit;

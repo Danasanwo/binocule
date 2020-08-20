@@ -6,7 +6,7 @@
           <img @click="goBack" src="../../public/images/logo/back.svg" alt srcset />
           <p style="margin: 0; font-weight:bold">Emeka Foodstuff Store</p>
           <img src="../../public/images/logo/share.svg" alt />
-          <img @click="openNew" src="../../public/images/logo/menu.svg" class="menu-btn" alt />
+          <img @click="open" src="../../public/images/logo/menu.svg" class="menu-btn" alt />
         </div>
         <div class="dropdown">
           <div class="createNew">Create New</div>
@@ -67,15 +67,17 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["validity", "changePage"]),
+    ...mapActions(["validity"]),
     goBack() {
+      // const valid = false;
+
+      // this.validity(valid);
+
       this.$emit("goBack");
     },
-    openNew() {
+    open() {
       this.isActive = false;
       this.unshow = true;
-      let current = [false, true];
-      this.changePage(current);
     }
   }
 };
@@ -89,7 +91,7 @@ export default {
   border-top-left-radius: 10px;
   // font-weight: bold;
 
-  // display: none;s
+  // display: none;
 }
 .detailcontainer {
   width: inherit;

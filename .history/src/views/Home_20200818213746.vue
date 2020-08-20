@@ -2,15 +2,17 @@
   <div class="home">
     <div class="homepage">
       <MapContainer />
-      <Content />
+      <Details />
+      <AddNew />
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import Details from "@/components/Details.vue";
+import AddNew from "@/components/AddNew.vue";
 import MapContainer from "@/components/MapContainer.vue";
-import Content from "@/components/Content.vue";
 
 export default {
   name: "Home",
@@ -21,16 +23,17 @@ export default {
     };
   },
   components: {
-    MapContainer,
-    Content
+    Details,
+    AddNew,
+    MapContainer
   }
 };
 </script>
 
 <style lang="scss">
 .homepage {
-  width: 100%;
-  // display: block;
+  width: 100vw;
+  display: flex;
   font-family: "Open Sans", sans-serif;
 }
 

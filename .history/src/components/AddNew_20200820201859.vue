@@ -99,7 +99,6 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["returnHome"]),
     changeView() {
       this.isActive = this.allCurrent[0];
       this.unshow = this.allCurrent[1];

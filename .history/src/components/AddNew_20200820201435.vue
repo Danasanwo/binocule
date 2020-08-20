@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "AddNew",
@@ -99,12 +99,10 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["returnHome"]),
     changeView() {
       this.isActive = this.allCurrent[0];
       this.unshow = this.allCurrent[1];
-    },
-    backHome() {}
+    }
   },
   computed: mapGetters(["allCurrent"]),
   beforeUpdate() {

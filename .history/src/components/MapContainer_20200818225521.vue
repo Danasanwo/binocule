@@ -56,7 +56,6 @@ export default {
     height: 100vh;
   }
 }
-
 .basemap {
   width: 100%;
   height: 100vh;

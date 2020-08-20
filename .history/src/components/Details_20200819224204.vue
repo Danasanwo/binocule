@@ -89,7 +89,7 @@ export default {
   border-top-left-radius: 10px;
   // font-weight: bold;
 
-  // display: none;s
+  // display: none;
 }
 .detailcontainer {
   width: inherit;

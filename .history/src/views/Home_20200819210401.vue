@@ -29,9 +29,12 @@ export default {
 
 <style lang="scss">
 .homepage {
-  width: 100%;
-  // display: block;
+  width: 100vw;
+  display: block;
   font-family: "Open Sans", sans-serif;
+}
+
+#MapContainer {
 }
 
 .unShow {

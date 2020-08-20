@@ -3,7 +3,7 @@
     <div class="detailContainer">
       <div class="new-business">
         <div class="com-name">
-          <img @click="backHome" src="../../public/images/logo/back.svg" alt srcset />
+          <img src="../../public/images/logo/back.svg" alt srcset />
           <p style="margin: 0; font-weight:bold">New Business</p>
         </div>
         <p class="caption">What does this business offer?</p>
@@ -83,12 +83,11 @@
         <button type="submit">Submit</button>
       </div>
     </div>
-    <p style="display:none">{{ allCurrent }}</p>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "AddNew",
@@ -99,12 +98,10 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["returnHome"]),
     changeView() {
       this.isActive = this.allCurrent[0];
       this.unshow = this.allCurrent[1];
-    },
-    backHome() {}
+    }
   },
   computed: mapGetters(["allCurrent"]),
   beforeUpdate() {

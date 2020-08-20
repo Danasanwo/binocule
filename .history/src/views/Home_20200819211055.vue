@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss">
 .homepage {
-  width: 100%;
+  // width: 100vw;
   // display: block;
   font-family: "Open Sans", sans-serif;
 }

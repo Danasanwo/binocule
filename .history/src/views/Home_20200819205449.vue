@@ -9,7 +9,7 @@
 
 <script>
 // @ is an alias to /src
-import MapContainer from "@/components/MapContainer.vue";
+import Details from "@/components/Details.vue";
 import Content from "@/components/Content.vue";
 
 export default {
@@ -21,7 +21,7 @@ export default {
     };
   },
   components: {
-    MapContainer,
+    Details,
     Content
   }
 };
@@ -29,8 +29,8 @@ export default {
 
 <style lang="scss">
 .homepage {
-  width: 100%;
-  // display: block;
+  width: 100vw;
+  display: flex;
   font-family: "Open Sans", sans-serif;
 }
 
