@@ -14,23 +14,6 @@ const routes = [
     path: '/logger',
     name: 'Logger',
     component: () => import('../views/Logger.vue'),
-    children: [
-      {
-        path: '/',
-        name: 'Login',
-        component: () => import('../views/Login.vue'),
-      },
-      {
-        path: 'signup',
-        name: 'Signup',
-        component: () => import('../views/Signup.vue'),
-      },
-      {
-        path: 'retrieve',
-        name: 'Retrieve',
-        component: () => import('../views/Retrieve.vue'),
-      },
-    ],
   },
   {
     path: '/about',

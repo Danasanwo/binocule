@@ -25,11 +25,6 @@ const routes = [
         name: 'Signup',
         component: () => import('../views/Signup.vue'),
       },
-      {
-        path: 'retrieve',
-        name: 'Retrieve',
-        component: () => import('../views/Retrieve.vue'),
-      },
     ],
   },
   {

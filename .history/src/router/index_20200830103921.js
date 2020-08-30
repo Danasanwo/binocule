@@ -16,19 +16,14 @@ const routes = [
     component: () => import('../views/Logger.vue'),
     children: [
       {
-        path: '/',
+        path: 'login',
         name: 'Login',
         component: () => import('../views/Login.vue'),
       },
       {
         path: 'signup',
         name: 'Signup',
-        component: () => import('../views/Signup.vue'),
-      },
-      {
-        path: 'retrieve',
-        name: 'Retrieve',
-        component: () => import('../views/Retrieve.vue'),
+        component: () => import('src/views/Signup.vue'),
       },
     ],
   },
