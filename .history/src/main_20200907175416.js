@@ -5,7 +5,6 @@ import store from './store'
 import Vuelidate from 'vuelidate'
 
 Vue.use(Vuelidate)
-
 // import mapboxgl from 'mapbox-gl'
 
 Vue.config.productionTip = false
@@ -13,5 +12,5 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount('#app')

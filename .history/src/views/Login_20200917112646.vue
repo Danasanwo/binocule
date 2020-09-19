@@ -60,8 +60,6 @@ export default {
           { headers }
         );
         console.log(response);
-        if (response.data.status == "success")
-          this.$router.push({ name: "Home" });
       } catch (err) {
         console.log(err);
       }

@@ -6,7 +6,7 @@
         <!-- <input type="text" name="Username" id="username" v-model="username" placeholder="Username" /> -->
         <input type="email" name="email" id="email" v-model="email" placeholder="email" />
         <input
-          type="password"
+          type="password`"
           name="Password"
           id="password"
           v-model="password"
@@ -61,7 +61,7 @@ export default {
         );
         console.log(response);
         if (response.data.status == "success")
-          this.$router.push({ name: "Home" });
+          this.$router.push({ name: "Login" });
       } catch (err) {
         console.log(err);
       }

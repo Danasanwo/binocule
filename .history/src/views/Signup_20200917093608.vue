@@ -65,7 +65,7 @@
 
 <script>
 import { required } from "vuelidate/lib/validators";
-// import { mapActions } from "vuex";
+import { mapActions } from "vuex";
 import axios from "axios";
 
 export default {
@@ -94,7 +94,7 @@ export default {
       console.log(details);
       this.signingUp(details);
     },
-    async signingUp(details) {
+    async signingUp() {
       try {
         let jsondetails = JSON.stringify(details);
         console.log(jsondetails);
@@ -111,8 +111,7 @@ export default {
         );
 
         console.log(response);
-        if (response.data.status == "success")
-          this.$router.push({ name: "Login" });
+        commit("creatingAccount", response);
       } catch (err) {
         console.log(err);
       }

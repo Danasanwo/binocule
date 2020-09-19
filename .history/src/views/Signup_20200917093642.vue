@@ -65,7 +65,7 @@
 
 <script>
 import { required } from "vuelidate/lib/validators";
-// import { mapActions } from "vuex";
+import { mapActions } from "vuex";
 import axios from "axios";
 
 export default {
@@ -111,8 +111,6 @@ export default {
         );
 
         console.log(response);
-        if (response.data.status == "success")
-          this.$router.push({ name: "Login" });
       } catch (err) {
         console.log(err);
       }

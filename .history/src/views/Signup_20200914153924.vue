@@ -1,6 +1,6 @@
 <template>
   <div class="signup">
-    <form @submit.prevent="submitSignup">
+    <form action="post" @submit="submitSignup">
       <div class="sign-container form-group">
         <div class="names">
           <input
@@ -52,7 +52,10 @@
           placeholder="Confirm Password"
           v-model="confirmPassword"
         />
+
         <button class="form__submit" type="submit">Sign up</button>
+
+        <!-- <button class="form__submit" type="submit" @click="submitSignup">Sign up</button> -->
 
         <p>
           Click here to
@@ -65,8 +68,7 @@
 
 <script>
 import { required } from "vuelidate/lib/validators";
-// import { mapActions } from "vuex";
-import axios from "axios";
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -80,7 +82,7 @@ export default {
     };
   },
   methods: {
-    // ...mapActions(["signingUp"]),
+    ...mapActions(["signingUp"]),
     submitSignup() {
       let details = {
         username: this.Username,
@@ -88,34 +90,11 @@ export default {
         lastName: this.lastName,
         email: this.email,
         password: this.password,
-        passwordConfirm: this.confirmPassword
+        confirmPassword: this.confirmPassword
       };
 
       console.log(details);
       this.signingUp(details);
-    },
-    async signingUp(details) {
-      try {
-        let jsondetails = JSON.stringify(details);
-        console.log(jsondetails);
-
-        const headers = {
-          "Content-type": "application/json",
-          Accept: "*/*"
-        };
-
-        const response = await axios.post(
-          "https://binocule.azurewebsites.net/signup",
-          details,
-          { headers }
-        );
-
-        console.log(response);
-        if (response.data.status == "success")
-          this.$router.push({ name: "Login" });
-      } catch (err) {
-        console.log(err);
-      }
     }
   },
   validations: {

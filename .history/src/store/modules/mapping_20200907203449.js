@@ -7,32 +7,24 @@ const state = {
 
 const actions = {
   async changePage({ commit }, current) {
-    const response = await current
+    const response = current
     console.log(response)
     commit('setChanging', response)
   },
-
   async signingUp({ commit }, details) {
-    try {
-      let jsondetails = JSON.stringify(details)
-      console.log(jsondetails)
-
-      const headers = {
-        'Content-type': 'application/json',
-        Accept: '*/*',
-      }
-
-      const response = await axios.post(
-        'https://binocule.azurewebsites.net/signup',
-        details,
-        { headers }
-      )
-
-      console.log(response)
-      commit('creatingAccount', response)
-    } catch (err) {
-      console.log(err)
+    let header = {
+      'Content-Type': 'application/json',
+      Accept: '*/*',
+      Connection: 'keep-alive',
+      'Accept-Encoding': 'gzip, deflate, br',
     }
+    const response = await axios.post(
+      'https://binocule.azurewebsites.net/signup',
+      details,
+      { header }
+    )
+    console.log(response)
+    commit('creatingAccount', response)
   },
 }
 

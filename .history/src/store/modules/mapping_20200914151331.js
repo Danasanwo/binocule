@@ -19,12 +19,11 @@ const actions = {
 
       const headers = {
         'Content-type': 'application/json',
-        Accept: '*/*',
       }
 
       const response = await axios.post(
         'https://binocule.azurewebsites.net/signup',
-        details,
+        jsondetails,
         { headers }
       )
 

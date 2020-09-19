@@ -19,7 +19,6 @@ const actions = {
 
       const headers = {
         'Content-type': 'application/json',
-        Accept: '*/*',
       }
 
       const response = await axios.post(

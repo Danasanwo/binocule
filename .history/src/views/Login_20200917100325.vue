@@ -5,13 +5,7 @@
         <h1>Welcome !</h1>
         <!-- <input type="text" name="Username" id="username" v-model="username" placeholder="Username" /> -->
         <input type="email" name="email" id="email" v-model="email" placeholder="email" />
-        <input
-          type="password"
-          name="Password"
-          id="password"
-          v-model="password"
-          placeholder="password"
-        />
+        <input type="text" name="Password" id="password" v-model="password" placeholder="password" />
 
         <p>
           Forgot your password ?
@@ -29,7 +23,7 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   data() {
@@ -40,31 +34,11 @@ export default {
     };
   },
   methods: {
-    loggingIn() {
+    logginIn() {
       const logdetails = {
         email: this.email,
         password: this.password
       };
-      this.signingIn(logdetails);
-    },
-    async signingIn(logdetails) {
-      try {
-        const headers = {
-          "Content-type": "application/json",
-          Accept: "*/*"
-        };
-
-        const response = await axios.post(
-          "https://binocule.azurewebsites.net/login",
-          logdetails,
-          { headers }
-        );
-        console.log(response);
-        if (response.data.status == "success")
-          this.$router.push({ name: "Home" });
-      } catch (err) {
-        console.log(err);
-      }
     }
   }
 };

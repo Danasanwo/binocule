@@ -111,8 +111,6 @@ export default {
         );
 
         console.log(response);
-        if (response.data.status == "success")
-          this.$router.push({ name: "Login" });
       } catch (err) {
         console.log(err);
       }

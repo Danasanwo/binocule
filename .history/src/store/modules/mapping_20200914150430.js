@@ -17,17 +17,10 @@ const actions = {
       let jsondetails = JSON.stringify(details)
       console.log(jsondetails)
 
-      const headers = {
-        'Content-type': 'application/json',
-        Accept: '*/*',
-      }
-
       const response = await axios.post(
         'https://binocule.azurewebsites.net/signup',
-        details,
-        { headers }
+        jsondetails
       )
-
       console.log(response)
       commit('creatingAccount', response)
     } catch (err) {
