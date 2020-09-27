@@ -10,6 +10,13 @@ const routes = [
     name: 'Home',
     component: Home,
   },
+
+  {
+    path: '/activity',
+    name: 'Activity',
+    component: () => import('./views/Activity'),
+  },
+
   {
     path: '/logger',
     name: 'Logger',
@@ -29,28 +36,6 @@ const routes = [
         path: 'retrieve',
         name: 'Retrieve',
         component: () => import('../views/Retrieve.vue'),
-      },
-    ],
-  },
-  {
-    path: '/activity',
-    name: 'Activity',
-    component: () => import('../views/Activity.vue'),
-    children: [
-      {
-        path: '/',
-        name: 'Active',
-        component: () => import('../views/Active.vue'),
-      },
-      {
-        path: 'categories',
-        name: 'Categories',
-        component: () => import('../views/ActCateg.vue'),
-      },
-      {
-        path: 'time',
-        name: 'Time',
-        component: () => import('../views/Time.vue'),
       },
     ],
   },

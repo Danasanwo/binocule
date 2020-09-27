@@ -47,11 +47,6 @@ const routes = [
         name: 'Categories',
         component: () => import('../views/ActCateg.vue'),
       },
-      {
-        path: 'time',
-        name: 'Time',
-        component: () => import('../views/Time.vue'),
-      },
     ],
   },
   {

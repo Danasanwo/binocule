@@ -54,7 +54,6 @@ const mutations = {
 
 const getters = {
   allCurrent: (state) => state.current,
-  allCateg: (state) => state.categ,
 }
 
 export default {

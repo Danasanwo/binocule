@@ -12,11 +12,10 @@ const actions = {
     console.log(response)
     commit('setChanging', response)
   },
-
-  async fetchCateg({ commit }, option) {
-    const response = await option
+  async changePage({ commit }, current) {
+    const response = await current
     console.log(response)
-    commit('setCateg', response)
+    commit('setChanging', response)
   },
 
   async signingUp({ commit }, details) {
@@ -47,14 +46,10 @@ const mutations = {
   setChanging: function(state, current) {
     state.current = current
   },
-  setCateg: function(state, categ) {
-    state.categ = categ
-  },
 }
 
 const getters = {
   allCurrent: (state) => state.current,
-  allCateg: (state) => state.categ,
 }
 
 export default {
